@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Спортивный прогресс</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="score-card" aria-label="Текущий прогресс">
+        <p class="eyebrow">Мой спортивный прогресс</p>
+        <h1 id="score" class="score-value">0</h1>
+        <p class="score-caption">баллов</p>
+      </section>
+
+      <section class="actions" aria-label="Действия">
+        <button class="action-button action-button--positive" id="gymButton" type="button">
+          <span class="action-title">Сходил в зал</span>
+          <span class="action-points">+10 баллов</span>
+        </button>
+
+        <button class="action-button action-button--negative" id="burgerButton" type="button">
+          <span class="action-title">Съел бургер</span>
+          <span class="action-points">-30 баллов</span>
+        </button>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

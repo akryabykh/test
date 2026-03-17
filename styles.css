@@ -1,0 +1,157 @@
+:root {
+  color-scheme: light;
+  --bg-top: #fff6e2;
+  --bg-bottom: #ffd2ae;
+  --panel: rgba(255, 255, 255, 0.78);
+  --panel-border: rgba(255, 255, 255, 0.58);
+  --text-main: #1f2937;
+  --text-soft: #6b7280;
+  --accent-green: #1c9d63;
+  --accent-green-dark: #0c6d43;
+  --accent-red: #e85d3f;
+  --accent-red-dark: #af2f18;
+  --shadow: 0 24px 60px rgba(113, 65, 25, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Avenir Next", "Segoe UI", "Trebuchet MS", sans-serif;
+  color: var(--text-main);
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.9), transparent 30%),
+    linear-gradient(160deg, var(--bg-top), var(--bg-bottom));
+}
+
+.app-shell {
+  width: min(100%, 960px);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 24px;
+  display: grid;
+  align-content: center;
+  gap: 20px;
+}
+
+.score-card,
+.action-button {
+  border: 1px solid var(--panel-border);
+  background: var(--panel);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow);
+}
+
+.score-card {
+  border-radius: 32px;
+  padding: 28px 24px;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  color: var(--text-soft);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.score-value {
+  margin: 0;
+  font-size: clamp(4.5rem, 16vw, 8rem);
+  line-height: 0.95;
+  font-weight: 800;
+}
+
+.score-caption {
+  margin: 10px 0 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-soft);
+}
+
+.actions {
+  display: grid;
+  gap: 16px;
+}
+
+.action-button {
+  appearance: none;
+  width: 100%;
+  border-radius: 28px;
+  padding: 24px;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.action-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 28px 70px rgba(113, 65, 25, 0.22);
+}
+
+.action-button:active {
+  transform: translateY(0);
+}
+
+.action-button--positive {
+  border-color: rgba(28, 157, 99, 0.24);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(216, 253, 234, 0.95));
+}
+
+.action-button--negative {
+  border-color: rgba(232, 93, 63, 0.24);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(255, 225, 219, 0.95));
+}
+
+.action-title,
+.action-points {
+  display: block;
+}
+
+.action-title {
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 800;
+}
+
+.action-points {
+  margin-top: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.action-button--positive .action-points {
+  color: var(--accent-green-dark);
+}
+
+.action-button--negative .action-points {
+  color: var(--accent-red-dark);
+}
+
+@media (min-width: 760px) {
+  .app-shell {
+    padding: 40px;
+    gap: 24px;
+  }
+
+  .actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .score-card {
+    padding: 40px 32px;
+  }
+
+  .action-button {
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
